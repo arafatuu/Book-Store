@@ -5,3 +5,6 @@
 /.vs
 /WebGentle BookStore/.vs/WebGentle BookStore/v16
 /WebGentle BookStore/WebGentle BookStore/obj
+/WebGentle BookStore/.vs/WebGentle BookStore
+/WebGentle BookStore/WebGentle BookStore/bin/Debug/net5.0/ref
+/WebGentle BookStore/WebGentle BookStore/bin/Debug/net5.0
