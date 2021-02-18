@@ -20,7 +20,8 @@ namespace WebGentle_BookStore.Controllers
         }
         public ViewResult ContractUs()
         {
-            return View();
+            return View(); 
         }
+       
     }
 }

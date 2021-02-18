@@ -26,10 +26,10 @@ namespace WebGentle_BookStore.Repository
         {
             return new List<BookModel>()
             {
-                new BookModel() { Id = 1, BookName = "C#", AuthorName = "Arafat" },
-                new BookModel() { Id = 2, BookName = "Java", AuthorName = "Shawon" },
-                new BookModel() { Id = 3, BookName = "CPP", AuthorName = "Rubel" },
-                new BookModel() { Id = 4, BookName = "C", AuthorName = "Arafat" },
+                new BookModel() { Id = 1, BookName = "C#", Description="This is a c# Programming books. Mannualy description", AuthorName = "Arafat Rahman" },
+                new BookModel() { Id = 2, BookName = "Java", Description="This is a Java Programming books. Mannualy description", AuthorName = "Shawon Mahmud" },
+                new BookModel() { Id = 3, BookName = "CPP", Description="This is a c++ Programming books. Mannualy description", AuthorName = "Rubel Hossain" },
+                new BookModel() { Id = 4, BookName = "C", Description="This is a C Programming books. Mannualy description", AuthorName = "Saiful Islam" },
             };
         }
     }

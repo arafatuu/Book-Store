@@ -37,6 +37,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="/home/contractus">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Book/GetAllBooks">All Books</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -45,5 +48,12 @@
     <main role="main">
         @RenderBody()
     </main>
+    <div>
+        <footer class="bordder-top card-footer text-muted text-center">
+            <div class="container">
+                Copyright &copy; Bookstore @DateTime.Now.Year
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
