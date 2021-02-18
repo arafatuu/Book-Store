@@ -11,6 +11,5 @@ namespace WebGentle_BookStore.Models
         public string BookName { get; set; }
         public string AuthorName { get; set; }
         public string Description { get; set; }
-
     }
 }

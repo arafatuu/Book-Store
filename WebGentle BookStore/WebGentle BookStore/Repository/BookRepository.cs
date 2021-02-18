@@ -30,7 +30,8 @@ namespace WebGentle_BookStore.Repository
                 new BookModel() { Id = 2, BookName = "Java", Description="This is a Java Programming books. Mannualy description", AuthorName = "Shawon Mahmud" },
                 new BookModel() { Id = 3, BookName = "CPP", Description="This is a c++ Programming books. Mannualy description", AuthorName = "Rubel Hossain" },
                 new BookModel() { Id = 4, BookName = "C", Description="This is a C Programming books. Mannualy description", AuthorName = "Saiful Islam" },
-            };
+            
+           };
         }
     }
 }
