@@ -21,9 +21,10 @@ namespace WebGentle_BookStore.Controllers
             var data= _bookRepository.GetAllBooks();
             return View(data);
         }
-        public BookModel GetBook(int id)
+        public ViewResult GetBook(int id)
         {
-            return _bookRepository.GetBookById(id);
+            var book_details =  _bookRepository.GetBookById(id);
+            return View(book_details);
         }
 
         public List<BookModel> SearchBook(string BookName, string AuthorName)

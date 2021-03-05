@@ -26,10 +26,10 @@ namespace WebGentle_BookStore.Repository
         {
             return new List<BookModel>()
             {
-                new BookModel() { Id = 1, BookName = "C#", Description="This is a c# Programming books. Mannualy description", AuthorName = "Arafat Rahman" },
-                new BookModel() { Id = 2, BookName = "Java", Description="This is a Java Programming books. Mannualy description", AuthorName = "Shawon Mahmud" },
-                new BookModel() { Id = 3, BookName = "CPP", Description="This is a c++ Programming books. Mannualy description", AuthorName = "Rubel Hossain" },
-                new BookModel() { Id = 4, BookName = "C", Description="This is a C Programming books. Mannualy description", AuthorName = "Saiful Islam" },
+                new BookModel() { Id = 1, BookName = "Coding Interview", Description="This is a  Programming books.It has discussed about prepation for software company as a fresher", AuthorName = "Tamim Shahriar Subeen", Catagory="Pogramming", TotalPages=180, Languages="Bangla" },
+                new BookModel() { Id = 2, BookName = "Teach Yourself C++", Description="This is a C++ Programming book. Mannualy description", AuthorName = "Herbert Schildt", Catagory="Programming", Languages="English", TotalPages=576 },
+                new BookModel() { Id = 3, BookName = "Gavi Brittanto", Description="This is a c++ Novel Book. Mannualy description", AuthorName = "Ahmed Sofa", Catagory="Novel", TotalPages=125, Languages="Bangla"},
+                new BookModel() { Id = 4, BookName = "dry ironic wit", Description="This is a poetry book. Mannualy description", AuthorName = "John Keats", Catagory="Poetry" , Languages="English", TotalPages=234 },
             
            };
         }

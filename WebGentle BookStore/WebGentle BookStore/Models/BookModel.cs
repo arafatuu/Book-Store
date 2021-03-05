@@ -11,5 +11,10 @@ namespace WebGentle_BookStore.Models
         public string BookName { get; set; }
         public string AuthorName { get; set; }
         public string Description { get; set; }
+
+
+        public string Catagory { get; set; }
+        public int TotalPages { get; set; }
+        public string Languages { get; set; }
     }
 }
