@@ -27,12 +27,16 @@ namespace WebGentle_BookStore
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
-            app.UseRouting();
+            app.UseRouting(); 
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
-            });
+               /* endpoints.MapControllerRoute(
+                    name: "Default",
+                    pattern: "BookApp/{controller=Home}/{action=Index}/{id?}"); */
+
+        });
         }
     }
 }
