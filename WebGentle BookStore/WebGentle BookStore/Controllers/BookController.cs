@@ -31,5 +31,21 @@ namespace WebGentle_BookStore.Controllers
         {
             return _bookRepository.SearchBook(BookName, AuthorName);
         }
+        public ViewResult AddBook()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public ViewResult AddBook(BookModel bookModel)
+        {
+            if (bookModel is null)
+            {
+                throw new ArgumentNullException(nameof(bookModel));
+            }
+
+            return View();
+        }
     }
 }
