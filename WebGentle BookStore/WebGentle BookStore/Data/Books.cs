@@ -16,5 +16,8 @@ namespace WebGentle_BookStore.Data
         public string Catagory { get; set; }
         public int TotalPages { get; set; }
         public string Languages { get; set; }
+
+        public DateTime? CreateOn { get; set; }
+        public DateTime? UpdateOn { get; set; }
     }
 }

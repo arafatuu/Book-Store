@@ -11,9 +11,9 @@ namespace WebGentle_BookStore.Controllers
     public class BookController : Controller
     {
         private readonly BookRepository _bookRepository= null; 
-        public BookController()
+        public BookController(BookRepository bookRepository)
         {
-            _bookRepository = new BookRepository();
+            _bookRepository = bookRepository;
 
         }
         public ViewResult GetAllBooks()
@@ -31,18 +31,21 @@ namespace WebGentle_BookStore.Controllers
         {
             return _bookRepository.SearchBook(BookName, AuthorName);
         }
-        public ViewResult AddBook()
+        public ViewResult AddBook(bool isSuccess = false, int bookid=0)
         {
+            ViewBag.IsSuccess = isSuccess;
+            ViewBag.Bookid = bookid;
             return View();
         }
 
         [HttpPost]
 
-        public ViewResult AddBook(BookModel bookModel)
+        public IActionResult AddBook(BookModel bookModel)
         {
-            if (bookModel is null)
+           int id = _bookRepository.AddNewBook(bookModel);
+            if(id>0)
             {
-                throw new ArgumentNullException(nameof(bookModel));
+                return RedirectToAction(nameof(AddBook), new { isSuccess = true, bookid =  id});
             }
 
             return View();

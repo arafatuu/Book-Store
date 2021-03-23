@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Webgentle.BookStore.Data;
 using WebGentle_BookStore.Data;
+using WebGentle_BookStore.Repository;
 
 namespace WebGentle_BookStore
 {
@@ -22,6 +23,8 @@ namespace WebGentle_BookStore
             services.AddDbContext<BookStoredbContext>(
                 options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Bookstore;Trusted_Connection=True;MultipleActiveResultSets=true"));
             services.AddControllersWithViews();
+
+            services.AddScoped<BookRepository, BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
