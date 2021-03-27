@@ -16,14 +16,14 @@ namespace WebGentle_BookStore.Controllers
             _bookRepository = bookRepository;
 
         }
-        public ViewResult GetAllBooks()
+        public async Task<ViewResult> GetAllBooks()
         {
-            var data= _bookRepository.GetAllBooks();
+            var data= await _bookRepository.GetAllBooks();
             return View(data);
         }
-        public ViewResult GetBook(int id)
+        public async Task<ViewResult> GetBook(int id)
         {
-            var book_details =  _bookRepository.GetBookById(id);
+            var book_details =  await _bookRepository.GetBookById(id);
             return View(book_details);
         }
 

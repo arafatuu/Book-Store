@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebGentle_BookStore.Migrations
 {
@@ -17,7 +18,9 @@ namespace WebGentle_BookStore.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Catagory = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TotalPages = table.Column<int>(type: "int", nullable: false),
-                    Languages = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Languages = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreateOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdateOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {

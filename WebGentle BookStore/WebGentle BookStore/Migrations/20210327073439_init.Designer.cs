@@ -10,8 +10,8 @@ using Webgentle.BookStore.Data;
 namespace WebGentle_BookStore.Migrations
 {
     [DbContext(typeof(BookStoredbContext))]
-    [Migration("20210323150843_another")]
-    partial class another
+    [Migration("20210327073439_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

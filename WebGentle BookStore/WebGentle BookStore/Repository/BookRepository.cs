@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace WebGentle_BookStore.Repository
             {
                 Description = model.Description,
                 AuthorName = model.AuthorName,
+                BookName = model.BookName,
                 TotalPages = model.TotalPages,
                 CreateOn = DateTime.UtcNow,
                 UpdateOn = DateTime.UtcNow,
@@ -33,13 +35,50 @@ namespace WebGentle_BookStore.Repository
 
             return newBook.Id;
         }
-        public List<BookModel> GetAllBooks()
+        public async Task<List<BookModel>> GetAllBooks()
         {
-            return DataSource();
+            var AllBooks = new List<BookModel>();
+
+            var allbooksdb = await _context.Books.ToListAsync();
+            if (allbooksdb?.Any() == true)
+            {
+                foreach(var book in allbooksdb)
+                {
+                    AllBooks.Add(new BookModel()
+                    {
+                        AuthorName = book.AuthorName,
+                        Catagory = book.Catagory,
+                        Description = book.Description,
+                        Id = book.Id,
+                        Languages = book.Languages,
+                        BookName = book.BookName,
+                        TotalPages = book.TotalPages
+                    });
+                }
+                return AllBooks;
+            }
+
+            return null;
         }
-        public BookModel GetBookById(int id)
+        public async Task<BookModel> GetBookById(int id)
         {
-            return DataSource().Where(x => x.Id == id).FirstOrDefault();
+            var bookdb = await _context.Books.FindAsync(id);
+
+            if(bookdb!=null)
+            {
+                var bookdetails = new BookModel()
+                {
+                    AuthorName = bookdb.AuthorName,
+                    Catagory = bookdb.Catagory,
+                    Description = bookdb.Description,
+                    Id = bookdb.Id,
+                    Languages = bookdb.Languages,
+                    BookName = bookdb.BookName,
+                    TotalPages = bookdb.TotalPages
+                };
+                return bookdetails;
+            }
+            return null;
 
         }
         public List<BookModel> SearchBook(string bookname, string authorname)
